@@ -60,6 +60,18 @@ class DebatsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def upvote
+    @debat = Debat.find(params[:id])
+    @debat.upvote_by current_user
+    redirect_to :back
+  end
+  
+  def downvote
+    @debat = Debat.find(params[:id])
+    @debat.downvote_by current_user
+    redirect_to :back
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.

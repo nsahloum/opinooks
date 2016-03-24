@@ -1,6 +1,13 @@
 Rails.application.routes.draw do
-  resources :debats
-  get '/home', to: "pages#home"
+  resources :debats do
+    member do
+      put "like", to:    "links#upvote"
+      put "dislike", to: "links#downvote"
+    end
+  end
+  root "debats#index"
+  
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

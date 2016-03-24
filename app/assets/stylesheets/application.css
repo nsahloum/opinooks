@@ -12,4 +12,250 @@
  *
  *= require_tree .
  *= require_self
+ *= require foundation_and_overrides
+
  */
+ 
+ a:hover {
+     background-color: transparent;    
+ }
+ 
+ body {
+	font-family: 'Ubuntu', sans-serif;
+}
+
+.header {
+	padding: 2em 0 0;
+}
+h1.titlelogo a {
+	font-family: 'Lobster', cursive;
+	font-size: 1.8em;
+	color: #575757;
+}
+
+h1.titlelogo a .titleor {
+	color: #EA9776;
+}
+
+
+#menutop {
+	text-align: right;
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 1em;
+	padding-left: 2em;
+	font-weight: bold;
+}
+
+
+#menutop .signup {
+	color: #ff7743;
+}
+
+#menutop .signup:hover {
+	color: #f44a09;
+}
+
+#menutop .signin {
+	color: #32323c;
+}
+
+#menutop .signin:hover {
+	color: #4b4b4b;
+}
+
+#menutop a {
+	padding-left: 1em;
+}
+
+#menubox {
+	text-align: right;
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 1em;
+}
+
+#menubox a {
+	padding-left: 1em;
+	color: #9696a0;
+}
+
+.count {
+	text-align: center;
+	padding-left: 0.2em;
+}
+
+#lang a {
+	color: #ff7743;
+	font-family: 'Ubuntu', sans-serif;
+	font-weight: bold;
+}
+
+.dlang {
+	color: #9696a0;
+}
+
+.menugroup {
+	margin-top: 5em;
+	margin-bottom: 2em;
+}
+
+.debat {
+	padding-top: 2em;
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 1.8em;
+	color: #32323a;
+}
+
+.opinion {
+	padding-top: 3.5em;
+	font-family: 'Ubuntu', sans-serif;
+	text-align: center;
+}
+
+.upcount {
+	color : #9696a0;
+	font-size: 3em;
+	position: relative;
+	top: 0.35em;
+}
+
+.downcount {
+	color : #9696a0;
+	font-size: 3em;
+	position: relative;
+	bottom: 0.35em;
+}
+
+.ouicount {
+	font-family: 'Ubuntu', sans-serif;
+	color: #ff7743;
+	font-size: 1em;
+}
+
+.noncount {
+	font-family: 'Ubuntu', sans-serif;
+	color: #ff7743;
+	font-size: 1em;
+}
+
+.oui {
+	font-family: 'Ubuntu', sans-serif;
+	color : #9696a0;
+	font-size: 0.8em;
+	margin-bottom: 0.5em;
+}
+
+.non {
+	font-family: 'Ubuntu', sans-serif;
+	color : #9696a0;
+	font-size: 0.8em;
+	margin-top: 0.5em;
+}
+
+.opincount {
+	color: #78787e;
+}
+
+.reagir {
+	color: #ff7743;
+}
+
+.auteur {
+	color: #9696a0;
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 0.85em;
+	line-height: 1.5em;
+}
+
+.auteur .pseudo {
+	color: #ff7743;
+}
+
+.countresp {
+	font-family: 'Ubuntu', sans-serif;
+	margin-top: 1em;
+}
+
+@media only screen and (min-width: 640px) {
+	.countresp {
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 640px) {
+	#menutop {
+		font-size: 0.8em;
+	}
+
+	.menugroup {
+		text-align: center;
+	}
+
+	#menubox {
+		text-align: center;
+		margin-top: 0.6em;
+	}
+
+	.count {
+		display: none;
+	}
+	.opinion {
+		display: none;
+	}
+
+	.oui {
+		font-size: 1em;
+		padding-right: 0.3em;
+	}
+
+	.ouicount {
+		padding-right: 0.5em;
+	}
+
+	.non {
+		font-size: 1em;
+		padding-right: 0.3em;
+	}
+
+	.noncount {
+		padding-right: 0.5em;
+	}
+
+	.reagir {
+		font-weight: bold;
+	}
+
+	.opincount {
+		padding-right: 0.5em;
+	}
+
+}
+
+@media only screen and (max-width: 320px) {
+	.opincount {
+		padding-right: 0.3em;
+		font-size: 0.9em;
+		font-style: italic;
+	}
+
+	.noncount {
+		padding-right: 0.3em;
+	}
+
+	.non {
+		padding-right: 0.2em;
+		font-size: 0.9em;
+	}
+
+	.ouicount {
+		padding-right: 0.3em;
+	}
+
+	.oui {
+		font-size: 0.9em;
+		padding-right: 0.2em;
+	}
+
+	.reagir {
+		font-size: 0.9em;
+	}
+}
