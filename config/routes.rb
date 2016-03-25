@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :debats do
     member do
-      put "like", to:    "links#upvote"
-      put "dislike", to: "links#downvote"
+      put "like", to:    "debats#upvote"
+      put "dislike", to: "debats#downvote"
     end
   end
   root "debats#index"

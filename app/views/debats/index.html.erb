@@ -16,12 +16,14 @@
       <div class="row">
         <div class="large-9 medium-9 small-12 columns">
           <div class="debat"><%= debat.title %></div>
-          <div class="auteur">Submitted <%= time_ago_in_words(debat.created_at) %> ago by </div> 
-      <%= link_to like_debat_path(debat), method: :put do %>
+          <div class="auteur">Submitted <%= time_ago_in_words(debat.created_at) %> ago by <%= debat.user.email %></div> 
+      <%= link_to like_debat_path(debat), method: :put, class: "btn btn-default btn-sm" do %>
+        <span class="glyphicon glyphicon-chevron-up"></span>
         Upvote
         <%= debat.get_upvotes.size %>
       <% end %>
-      <%= link_to dislike_debat_path(debat), method: :put do %>
+      <%= link_to dislike_debat_path(debat), method: :put, class: "btn btn-default btn-sm" do %>
+        <span class="glyphicon glyphicon-chevron-down">
         Downvote
         <%= debat.get_downvotes.size %>
       <% end %>

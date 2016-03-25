@@ -14,7 +14,7 @@ class DebatsController < ApplicationController
 
   # GET /debats/new
   def new
-    @debat = Debat.new
+    @debat = current_user.debats.build
   end
 
   # GET /debats/1/edit
@@ -24,7 +24,7 @@ class DebatsController < ApplicationController
   # POST /debats
   # POST /debats.json
   def create
-    @debat = Debat.new(debat_params)
+    @debat = current_user.debats.build(debat_params)
 
     respond_to do |format|
       if @debat.save
