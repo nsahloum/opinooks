@@ -13,27 +13,35 @@
     </div>
 
     <% @debats.each do |debat| %>
-      <div class="row">
-        <div class="large-9 medium-9 small-12 columns">
-          <div class="debat"><%= debat.title %></div>
-          <div class="auteur">Submitted <%= time_ago_in_words(debat.created_at) %> ago by <%= debat.user.email %></div> 
-      <%= link_to like_debat_path(debat), method: :put, class: "btn btn-default btn-sm" do %>
-        <span class="glyphicon glyphicon-chevron-up"></span>
-        Upvote
-        <%= debat.get_upvotes.size %>
-      <% end %>
-      <%= link_to dislike_debat_path(debat), method: :put, class: "btn btn-default btn-sm" do %>
-        <span class="glyphicon glyphicon-chevron-down">
-        Downvote
-        <%= debat.get_downvotes.size %>
-      <% end %>
-        </div>
+   <div class="row">
+      <div class="large-1 columns count">
+        <%= link_to like_debat_path(debat), method: :put do %>
+          <div class="upcount"><i class="fa fa-angle-up"></i></div>
+          <div class="ouicount"><%= debat.get_upvotes.size %></div>
+          <div class="oui">Oui</div>
+        <%end%>
+     
+        <%= link_to dislike_debat_path(debat), method: :put do %>
+          <div class="non">Non</div>
+          <div class="noncount"><%= debat.get_downvotes.size %></div>
+          <div class="downcount"><i class="fa fa-angle-down"></i></div>
+        <% end %>
       </div>
+      
+      <div class="large-9 medium-9 small-12 columns">
+        <div class="debat"><%= debat.title %></div>
+        <div class="auteur">Submitted <%= time_ago_in_words(debat.created_at) %> ago by <span class="pseudo"><%= debat.user.email %></span></div> 
+      </div>
+      
+      <div class="small-2 columns opinion">
+        <div class="opincount">514  opinions</div>
+        <div class="reagir">Réagir</div>
+      </div>
+      
+    </div>
         <%#= link_to 'Show', debat %>
         <%#= link_to 'Edit', edit_debat_path(debat) %>
         <%#= link_to 'Destroy', debat, method: :delete, data: { confirm: 'Are you sure?' } %>
     <% end %>
 
 <br>
-
-<%#= link_to 'Create a debat', new_debat_path %>

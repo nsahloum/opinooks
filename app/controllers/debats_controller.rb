@@ -1,5 +1,6 @@
 class DebatsController < ApplicationController
   before_action :set_debat, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_user!, except: [:show, :index]
 
   # GET /debats
   # GET /debats.json
@@ -64,13 +65,19 @@ class DebatsController < ApplicationController
   def upvote
     @debat = Debat.find(params[:id])
     @debat.upvote_by current_user
-    redirect_to :back
+    respond_to do |format|
+      format.html {redirect_to :back }
+      format.json { render json: { count: @debat.liked_count } }
+    end
   end
   
   def downvote
     @debat = Debat.find(params[:id])
     @debat.downvote_by current_user
-    redirect_to :back
+    respond_to do |format|
+      format.html {redirect_to :back }
+      format.json { render json: { count: @debat.disliked_count } }
+    end
   end
 
   private
