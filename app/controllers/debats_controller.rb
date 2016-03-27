@@ -63,12 +63,13 @@ class DebatsController < ApplicationController
   end
   
   def upvote
-    @debat = Debat.find(params[:id])
-    @debat.upvote_by current_user
-    respond_to do |format|
-      format.html {redirect_to :back }
-      format.json { render json: { count: @debat.liked_count } }
-    end
+      @debat = Debat.find(params[:id])
+      @debat.upvote_by current_user
+        respond_to do |format|
+          format.html {redirect_to :back }
+          format.json { render json: { count: @debat.liked_count } }
+          format.js   { render :layout => false }
+        end
   end
   
   def downvote
@@ -77,6 +78,7 @@ class DebatsController < ApplicationController
     respond_to do |format|
       format.html {redirect_to :back }
       format.json { render json: { count: @debat.disliked_count } }
+      format.js   { render :layout => false }
     end
   end
 

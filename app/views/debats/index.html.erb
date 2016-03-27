@@ -13,19 +13,23 @@
     </div>
 
     <% @debats.each do |debat| %>
-   <div class="row">
+      <div class="row">
       <div class="large-1 columns count">
-        <%= link_to like_debat_path(debat), method: :put do %>
-          <div class="upcount"><i class="fa fa-angle-up"></i></div>
-          <div class="ouicount"><%= debat.get_upvotes.size %></div>
-          <div class="oui">Oui</div>
-        <%end%>
-     
-        <%= link_to dislike_debat_path(debat), method: :put do %>
-          <div class="non">Non</div>
-          <div class="noncount"><%= debat.get_downvotes.size %></div>
-          <div class="downcount"><i class="fa fa-angle-down"></i></div>
-        <% end %>
+        <span class= "like-<%= debat.id %>">
+          <%= link_to like_debat_path(debat), method: :put, remote: true do %>
+            <div class="upcount"><i class="fa fa-angle-up"></i></div>
+            <div class="ouicount up-<%= debat.id %>"><%= debat.get_upvotes.size %></div>
+            <div class="oui">Oui</div>
+          <%end%>
+        </span>
+          
+        <span class= "dislike-<%= debat.id %>"> 
+          <%= link_to dislike_debat_path(debat), method: :put, remote: true do %>
+            <div class="non">Non</div>
+            <div class="noncount down-<%= debat.id%>"> <%= debat.get_downvotes.size %></div>
+            <div class="downcount"><i class="fa fa-angle-down"></i></div>
+          <% end %>
+        </span>
       </div>
       
       <div class="large-9 medium-9 small-12 columns">

@@ -1,0 +1,6 @@
+$('.dislike-<%= @debat.id %>').bind('ajax:success', function() {
+
+   $('.up-<%= @debat.id %>').text(<%= @debat.get_upvotes.size%>);
+   $('.down-<%= @debat.id %>').text(<%= @debat.get_downvotes.size%>);
+
+});
