@@ -11,41 +11,56 @@
           <a href="#">By country <i class="fa fa-angle-down"></i></a>
       </div>  
     </div>
-
-    <% @debats.each do |debat| %>
-      <div class="row">
-      <div class="large-1 columns count">
-        <span class= "like-<%= debat.id %>">
-          <%= link_to like_debat_path(debat), method: :put, remote: true do %>
-            <div class="upcount"><i class="fa fa-angle-up"></i></div>
-            <div class="ouicount up-<%= debat.id %>"><%= debat.get_upvotes.size %></div>
-            <div class="oui">Oui</div>
-          <%end%>
-        </span>
-          
-        <span class= "dislike-<%= debat.id %>"> 
-          <%= link_to dislike_debat_path(debat), method: :put, remote: true do %>
-            <div class="non">Non</div>
-            <div class="noncount down-<%= debat.id%>"> <%= debat.get_downvotes.size %></div>
-            <div class="downcount"><i class="fa fa-angle-down"></i></div>
-          <% end %>
-        </span>
+    
+      <% @debats.each do |debat| %>
+        <div class="row">
+        <div class="large-1 columns count">
+          <span class= "like-<%= debat.id %>">
+            <% if user_signed_in? %>
+              <%= link_to like_debat_path(debat), method: :put, remote: true do %>
+                <div class="upcount"><i class="fa fa-angle-up"></i></div>
+                <div class="ouicount up-<%= debat.id %>"><%= debat.get_upvotes.size %></div>
+                <div class="oui">Oui</div>
+              <%end%>
+            <% else %>
+              <%= link_to like_debat_path(debat), method: :put do %>
+                <div class="upcount"><i class="fa fa-angle-up"></i></div>
+                <div class="ouicount up-<%= debat.id %>"><%= debat.get_upvotes.size %></div>
+                <div class="oui">Oui</div>
+              <%end%>
+            <% end %>
+          </span>
+            
+          <span class= "dislike-<%= debat.id %>">
+            <% if user_signed_in? %> 
+              <%= link_to dislike_debat_path(debat), method: :put, remote: true do %>
+                <div class="non">Non</div>
+                <div class="noncount down-<%= debat.id%>"> <%= debat.get_downvotes.size %></div>
+                <div class="downcount"><i class="fa fa-angle-down"></i></div>
+              <% end %>
+            <% else %>
+              <%= link_to dislike_debat_path(debat), method: :put do %>
+                <div class="non">Non</div>
+                <div class="noncount down-<%= debat.id%>"> <%= debat.get_downvotes.size %></div>
+                <div class="downcount"><i class="fa fa-angle-down"></i></div>
+              <% end %>
+            <% end %>
+          </span>
+        </div>
+        
+        <div class="large-9 medium-9 small-12 columns">
+          <div class="debat"><%= debat.title %></div>
+          <div class="auteur">Submitted <%= time_ago_in_words(debat.created_at) %> ago by <span class="pseudo"><%= debat.user.email %></span></div> 
+        </div>
+        
+        <div class="small-2 columns opinion">
+          <div class="opincount">514  opinions</div>
+          <div class="reagir">Réagir</div>
+        </div>
+        
       </div>
-      
-      <div class="large-9 medium-9 small-12 columns">
-        <div class="debat"><%= debat.title %></div>
-        <div class="auteur">Submitted <%= time_ago_in_words(debat.created_at) %> ago by <span class="pseudo"><%= debat.user.email %></span></div> 
-      </div>
-      
-      <div class="small-2 columns opinion">
-        <div class="opincount">514  opinions</div>
-        <div class="reagir">Réagir</div>
-      </div>
-      
-    </div>
-        <%#= link_to 'Show', debat %>
-        <%#= link_to 'Edit', edit_debat_path(debat) %>
-        <%#= link_to 'Destroy', debat, method: :delete, data: { confirm: 'Are you sure?' } %>
-    <% end %>
-
+          <%#= link_to 'Show', debat %>
+          <%#= link_to 'Edit', edit_debat_path(debat) %>
+          <%#= link_to 'Destroy', debat, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% end %>
 <br>

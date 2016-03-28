@@ -6,3 +6,4 @@ $('.like-<%= @debat.id %>').bind('ajax:success', function() {
    $('.down-<%= @debat.id %>').text(<%= @debat.get_downvotes.size%>);
 
 });
+

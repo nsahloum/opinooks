@@ -68,7 +68,9 @@ class DebatsController < ApplicationController
         respond_to do |format|
           format.html {redirect_to :back }
           format.json { render json: { count: @debat.liked_count } }
+          if user_signed_in?
           format.js   { render :layout => false }
+          end
         end
   end
   
@@ -78,7 +80,9 @@ class DebatsController < ApplicationController
     respond_to do |format|
       format.html {redirect_to :back }
       format.json { render json: { count: @debat.disliked_count } }
+      if user_signed_in?
       format.js   { render :layout => false }
+      end
     end
   end
 
