@@ -6,7 +6,7 @@ jQuery ->
 	if $('.pagination').length
 		$(window).scroll ->
 			url = $('.pagination .next_page').attr('href')
-			if url && $(window).scrollTop() > $(document).height() - $(window).height() - 50
-				$('.pagination').text("Fetching more debats...")
+			if url && $(window).scrollTop() > $(document).height() - $(window).height() - 2
+				$('.pagination').addClass("texty").text("Fetching more debats...")
 				$.getScript(url)
 		$(window).scroll()

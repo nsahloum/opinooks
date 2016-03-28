@@ -16,8 +16,14 @@
 
  */
  
- .pages {
+ 
+
+ .pagination {
  	display: none;
+ }
+
+ .texty {
+ 	display: inline;
  }
  
  body {
