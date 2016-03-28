@@ -31,6 +31,8 @@ gem 'acts_as_votable', '~> 0.10.0'
 
 gem 'devise', '~> 3.5', '>= 3.5.6'
 
+gem 'will_paginate', '~> 3.1'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

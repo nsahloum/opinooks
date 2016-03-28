@@ -5,7 +5,7 @@ class DebatsController < ApplicationController
   # GET /debats
   # GET /debats.json
   def index
-    @debats = Debat.all
+    @debats = Debat.all.order('created_at DESC').page(params[:page]).per_page(10)
   end
 
   # GET /debats/1

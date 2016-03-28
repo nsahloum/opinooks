@@ -16,8 +16,8 @@
 
  */
  
- a:hover {
-     background-color: transparent;    
+ .pages {
+ 	display: none;
  }
  
  body {
