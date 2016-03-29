@@ -20,10 +20,18 @@
 
  .pagination {
  	display: none;
+ 	text-align: center;
+ 	width: 100%;
  }
 
  .texty {
- 	display: inline;
+ 	display: block;
+ 	text-align: center;
+ 	width: 100%;
+ }
+ 
+ .texty img {
+ 	width: 20px;
  }
  
  body {
