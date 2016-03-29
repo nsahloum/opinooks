@@ -17,11 +17,11 @@
   <body>
      <div class="row header">
         <div class="small-6 columns">
-          <h1 class="titlelogo"><a href="#">Opin<span class="titleor">oo</span>ks</a></h2>
+          <h1><%= link_to "Opin", root_path, class: "titlelogo" %><%= link_to "oo", root_path, class:"titleor" %><%= link_to "ks", root_path, class:"titlelogo" %></h1>
         </div>  
         <div class="small-6 columns" id="menutop">
-          <a class="signup" href="#">Sign Up</a> 
-          <a class= "signin" href="#">Sign In</a>
+          <%= link_to 'Sign Up', new_user_registration_path, class: "signup" %>
+          <%= link_to 'Sign In', new_user_session_path, class: "signin" %>
         </div>
     </div>
     

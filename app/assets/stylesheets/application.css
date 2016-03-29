@@ -33,16 +33,27 @@
 .header {
 	padding: 2em 0 0;
 }
-h1.titlelogo a {
+.titlelogo {
 	font-family: 'Lobster', cursive;
 	font-size: 1.8em;
 	color: #575757;
 }
 
-h1.titlelogo a .titleor {
+.titleor {
+	font-family: 'Lobster', cursive;
+	font-size: 1.8em;
 	color: #EA9776;
 }
 
+.titleor:hover,
+.titleor:focus {
+	color: #EA9776;
+}
+
+.titlelogo:hover,
+.titlelogo:focus {
+	color: #575757;
+}
 
 #menutop {
 	text-align: right;
@@ -104,10 +115,16 @@ h1.titlelogo a .titleor {
 	margin-bottom: 2em;
 }
 
-.debat {
+.debat,
+.debat:hover
+.debat:focus{
 	padding-top: 2em;
 	font-family: 'Ubuntu', sans-serif;
 	font-size: 1.8em;
+	
+}
+
+.debat a {
 	color: #32323a;
 }
 

@@ -35,8 +35,8 @@
         </div>
         
         <div class="large-9 medium-9 small-12 columns">
-          <div class="debat"><%= debat.title %></div>
-          <div class="auteur">Submitted <%= time_ago_in_words(debat.created_at) %> ago by <span class="pseudo">blabla</span></div> 
+          <div class="debat"><%= link_to debat.title, debat %></div>
+          <div class="auteur">Submitted <%= time_ago_in_words(debat.created_at) %> ago by <span class="pseudo"><%= debat.user.email %></span></div> 
         </div>
         
         <div class="small-2 columns opinion">
