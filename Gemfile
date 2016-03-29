@@ -33,6 +33,8 @@ gem 'devise', '~> 3.5', '>= 3.5.6'
 
 gem 'will_paginate', '~> 3.1'
 
+gem 'faker',                   '1.4.2'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
