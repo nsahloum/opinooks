@@ -26,12 +26,17 @@ $(function(){ $(document).foundation(); });
               //Determines up-or-down scrolling
               if (st > lastScroll){
 //secondaryNav disappears when scrolled down
-                $(".arrow").css("display","block");
+                $(".footer").css("display","block");
+                $(".header").css("border", "1px solid #F2F2F2")
+                
               } 
               else {
 //secondaryNav disappears when scrolled up
-               $(".arrow").css("display","none");
+               $(".footer").css("display","none");
+               $(".header").css("border", "none")
               }
               //Updates scroll position
               lastScroll = st;
           });
+          
+          
