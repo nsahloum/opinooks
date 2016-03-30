@@ -1,5 +1,6 @@
+<div class = "under">
 <p id="notice"><%= notice %></p>
-
+<div id="top"></div>
 <div class="row menugroup">
       <div class="large-2 columns">
         <span id="lang"><%= link_to 'Create a debat', new_debat_path %></span>
@@ -12,13 +13,17 @@
       </div>  
 </div>
 
-        <div id="products">
-          <%= render "debats" %>
-        </div>
-        
+<div id="products">
+  <%= render "debats" %>
+</div>
+</div>        
          
        
       
         <%= will_paginate @debats %>
-    
+    <div class="footer row expanded columns">
+      <div class="large-12 large-centered">
+        <div class="arrow"><%= link_to ' <i class="fa fa-arrow-up"></i>'.html_safe, root_path %></div>
+      </div>
+    </div>
 <br>

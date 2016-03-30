@@ -38,6 +38,13 @@
         <div class="large-9 medium-9 small-12 columns">
           <div class="debat"><%= link_to debat.title, debat %></div>
           <div class="auteur">Submitted <%= time_ago_in_words(debat.created_at) %> ago by <span class="pseudo"><%= link_to debat.user.name, debat.user %></span></div>
+          <div class="countresp">
+            <span class="oui"><i class="fa fa-angle-up"></i> Oui</span>
+            <span class="ouicount"> 36</span> <span class="non">
+              <i class="fa fa-angle-down"></i> Non</span> 
+              <span class="noncount"> 56</span> 
+              <span class="opincount"> 514 opinions </span> 
+              <span class="reagir">Voir les réactions</span></div>
         </div>
         
         <div class="small-2 columns opinion">

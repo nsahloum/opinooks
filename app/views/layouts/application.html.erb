@@ -17,14 +17,17 @@
   <body>
     <div class="row header expanded columns">
       <div class="large-10 large-centered">
-        <div class="small-6 columns">
+        <div class="small-3 columns">
           <h1><%= link_to "Opin", root_path, class: "titlelogo" %><%= link_to "oo", root_path, class:"titleor" %><%= link_to "ks", root_path, class:"titlelogo" %></h1>
         </div>  
-        <div class="small-6 columns" id="menutop">
-          <%= link_to 'Sign Up', new_user_registration_path, class: "signup" %>
-          <%= link_to 'Sign In', new_user_session_path, class: "signin" %>
-          <%= link_to 'Account', edit_user_registration_path %>
-					<%= link_to 'Sign out', destroy_user_session_path, :method => :delete %>
+        <div class="small-9 columns" id="menutop">
+          <% if user_signed_in? %>
+            <%= link_to 'Account', edit_user_registration_path, class:"signup" %>
+  					<%= link_to 'Sign out', destroy_user_session_path, class:"signin", :method => :delete %>
+					<% else %>
+            <%= link_to 'Sign Up', new_user_registration_path, class: "signup" %>
+            <%= link_to 'Sign In', new_user_session_path, class: "signin" %>
+          <% end %>
         </div>
       </div>
     </div>
@@ -35,8 +38,8 @@
     		<% end %>
   		</div>
 		</div>
-    
+    <div class="ccontenu">
     <%= yield %>
-
+    </div>
   </body>
 </html>

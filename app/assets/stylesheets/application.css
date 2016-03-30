@@ -17,8 +17,15 @@
  */
  
 
-.form {
-	margin-top: 10em;
+
+.under {
+	width: 90%;
+	margin: auto;
+} 
+
+.ccontenu {
+	margin-top: 7em;
+	margin-bottom: 4em;
 }
 
 .alert {
@@ -49,6 +56,16 @@
 	font-family: 'Ubuntu', sans-serif;
 }
 
+.arrow {
+	display: none;
+	text-align: right;
+	width: 100%;
+}
+
+.arrow a {
+	color: #FF7743;
+}
+
 .header {
 	padding: 2em 0 1em 0;
 	border-bottom: 1px solid #F2F2F2;
@@ -56,6 +73,20 @@
 	z-index: 999;
 	background-color: #fff;
 }
+
+
+.footer {
+	padding: 2em 0.5em 1em 0;
+	border-bottom: 1px solid #F2F2F2;
+	position: fixed;
+	bottom: 0px;
+	text-align: right;
+	z-index: 999;
+	background: transparent;
+	font-size: 2em;
+}
+
+
 .titlelogo {
 	font-family: 'Lobster', cursive;
 	font-size: 1.8em;
@@ -134,7 +165,7 @@
 }
 
 .menugroup {
-	margin-top: 7em;
+	margin-top: 0em;
 	margin-bottom: 2em;
 }
 
