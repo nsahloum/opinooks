@@ -19,7 +19,7 @@
                password:              password,
                password_confirmation: password)
 end
-users = User.order(:created_at).take(6)
+users = User.order(:created_at).take(60)
 50.times do
   title = Faker::Lorem.sentence(5)
   description = Faker::Lorem.sentence(5)
