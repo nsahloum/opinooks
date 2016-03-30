@@ -21,7 +21,7 @@
 end
 users = User.order(:created_at).take(6)
 50.times do
-  title = Faker::Lorem.sentence(rand(1..6))
+  title = Faker::Lorem.sentence(5)
   description = Faker::Lorem.sentence(5)
   users.each { |user| user.debats.create!(description: description, title: title) }
 end
