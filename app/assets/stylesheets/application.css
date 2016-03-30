@@ -76,7 +76,7 @@
 
 
 .footer {
-	padding: 2em 0.5em 1em 0;
+	padding: 2em 3em 1em 0;
 	border-bottom: 1px solid #F2F2F2;
 	position: fixed;
 	bottom: 0px;
@@ -252,13 +252,21 @@
 	margin-top: 1em;
 }
 
+
+@media only screen and (max-width: 1024px) {
+	.footer {
+	padding: 2em 0.5em 1em 0;
+	}
+}
+
 @media only screen and (max-width: 768px) {
 	.ann {
 		display: none;
 	}
+	
 }
 
-@media only screen and (min-width: 640px) {
+@media only screen and (min-width: 641px) {
 	.countresp {
 		display: none;
 	}
