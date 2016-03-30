@@ -10,7 +10,7 @@
 #              password:              "foobarfoobar",
 #              password_confirmation: "foobarfoobar")
 
-99.times do |n|
+25.times do |n|
   name  = Faker::Name.name
   email = "example-#{n+1}@railstutorial.org"
   password = "passwordpassword"
@@ -19,7 +19,7 @@
                password:              password,
                password_confirmation: password)
 end
-users = User.order(:created_at).take(60)
+users = User.order(:created_at).take(19)
 50.times do
   title = Faker::Lorem.sentence(5)
   description = Faker::Lorem.sentence(5)
