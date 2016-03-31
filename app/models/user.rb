@@ -5,4 +5,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_many :debats
   acts_as_voter
+  validates_uniqueness_of :name
+  def to_param
+      "#{id} #{name}".parameterize
+  end
 end

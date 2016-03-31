@@ -35,6 +35,8 @@ gem 'will_paginate', '~> 3.1'
 
 gem 'faker',                   '1.4.2'
 
+gem 'friendly_id', '~> 5.1'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

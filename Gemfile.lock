@@ -71,6 +71,8 @@ GEM
       railties (>= 3.1.0)
       sass (>= 3.3.0, < 3.5)
       sprockets-es6 (>= 0.9.0)
+    friendly_id (5.1.0)
+      activerecord (>= 4.0.0)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     i18n (0.7.0)
@@ -178,6 +180,7 @@ DEPENDENCIES
   devise (~> 3.5, >= 3.5.6)
   faker (= 1.4.2)
   foundation-rails
+  friendly_id (~> 5.1)
   jbuilder (~> 2.0)
   jquery-rails
   pg
