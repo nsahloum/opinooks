@@ -2,6 +2,7 @@ faire des points et intéractions ludiques dans chaque profile
 ajouter un petit "design inspired by Mackenzie Child" en bas à gauche et fixe
 ajouter les réactions (commentaires)
 faire formulaires 
-Ajouter les bon boutons si connecter ou pas
-continuer comptes oui non sur mobile
+Ajouter les bon boutons si connecter ou pas >> OK
+continuer comptes oui non sur mobile >> OK
+Arranger les notifs flash
 ^^ :)
