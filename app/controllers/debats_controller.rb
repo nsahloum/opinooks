@@ -6,6 +6,7 @@ class DebatsController < ApplicationController
   # GET /debats.json
   def index
     @debats = Debat.all.order('created_at DESC').page(params[:page]).per_page(10)
+    @user = current_user
   end
 
   # GET /debats/1
@@ -69,7 +70,7 @@ class DebatsController < ApplicationController
           format.html {redirect_to :back }
           format.json { render json: { count: @debat.liked_count } }
           if user_signed_in?
-          format.js   { render :layout => false }
+            format.js { render :layout => false }
           end
         end
   end

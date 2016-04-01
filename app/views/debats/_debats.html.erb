@@ -5,16 +5,20 @@
           <span class= "like-<%= debat.id %>">
             <% if user_signed_in? %>
               <%= link_to like_debat_path(debat), method: :put, remote: true do %>
-                <div class="upcount"><i class="fa fa-angle-up"></i></div>
+                <% if current_user.voted_up_on? debat %>
+                  <div class="upcountsign upc-<%= debat.id %>"><i class="fa fa-angle-up"></i></div>
+                <% else %>
+                  <div class="upcount upc-<%= debat.id %>"><i class="fa fa-angle-up"></i></div>
+                <% end %>
                 <div class="ouicount up-<%= debat.id %>"><%= debat.get_upvotes.size %></div>
                 <div class="oui">Oui</div>
-              <%end%>
+              <% end %>
             <% else %>
               <%= link_to like_debat_path(debat), method: :put do %>
                 <div class="upcount"><i class="fa fa-angle-up"></i></div>
                 <div class="ouicount up-<%= debat.id %>"><%= debat.get_upvotes.size %></div>
                 <div class="oui">Oui</div>
-              <%end%>
+              <% end %>
             <% end %>
           </span>
             
@@ -23,13 +27,13 @@
               <%= link_to dislike_debat_path(debat), method: :put, remote: true do %>
                 <div class="non">Non</div>
                 <div class="noncount down-<%= debat.id%>"> <%= debat.get_downvotes.size %></div>
-                <div class="downcount"><i class="fa fa-angle-down"></i></div>
+                <div class="downcount doc-<%= debat.id %>"><i class="fa fa-angle-down"></i></div>
               <% end %>
             <% else %>
               <%= link_to dislike_debat_path(debat), method: :put do %>
                 <div class="non">Non</div>
                 <div class="noncount down-<%= debat.id%>"> <%= debat.get_downvotes.size %></div>
-                <div class="downcount"><i class="fa fa-angle-down"></i></div>
+                <div class="downcount doc-<%= debat.id %>"><i class="fa fa-angle-down"></i></div>
               <% end %>
             <% end %>
           </span>

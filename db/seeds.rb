@@ -19,8 +19,8 @@
                password:              password,
                password_confirmation: password)
 end
-users = User.order(:created_at).take(24)
-6.times do
+users = User.order(:created_at).take(6)
+12.times do
   title = Faker::Lorem.sentence(5)
   description = Faker::Lorem.sentence(5)
   users.each { |user| user.debats.create!(description: description, title: title) }
