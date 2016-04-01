@@ -16,7 +16,7 @@
 
   <body>
     <div class="row header expanded columns">
-      <div class="large-10 large-centered">
+      <div class="large-10 large-centered columns">
         <div class="small-3 columns">
           <h1><%= link_to "Opin", root_path, class: "titlelogo" %><%= link_to "oo", root_path, class:"titleor" %><%= link_to "ks", root_path, class:"titlelogo" %></h1>
         </div>  
@@ -32,16 +32,25 @@
       </div>
     </div>
     
-    <div class="ccontenu">
-    <div class="row">
-      <div class="large-12 columns">
+    <div class="ccontenu">  
+        <div class="alert" id="flash">
         <% flash.each do |name, msg| %>
-    			<%= content_tag(:div, msg, class: "alert") %>
-    		<% end %>
-  		</div>
-		</div>
-   
-    <%= yield %>
-  </div>
+          <%= content_tag :div, msg %>
+        <% end %>
+        </div>
+     
+        <div class="row">
+          <div class= "large-12 columns">
+            <%= yield %>
+          </div>
+        </div>
+      </div>
+    <script type="text/javascript">
+$(document).ready(function(){
+  setTimeout(function(){
+    $('#flash').remove();
+  }, 2500);
+ })
+</script>
   </body>
 </html>

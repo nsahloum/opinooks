@@ -1,60 +1,40 @@
 <div class="form">
-    <div class="row">
-      <div class="large-12 columns sign">
-        <h2>Sign up</h2>
-      </div>
-    </div>
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <div class="row">
-        <div class="large-12 columns">
-          <%= devise_error_messages! %>
-        </div>
-      </div>
     
-     <div><%= f.label :name %><br />
+        <h2 class="sign">Sign up</h2>
+      
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      
+          <%= devise_error_messages! %>
+        
+
+    
+        <div><%= f.label :name %><br />
         <%= f.text_field :name, autofocus: true %></div>
       
-      <div class="row">
-        <div class="large-12 columns">
-          <div class="field">
-            <p class="labelo"><%= f.label :email %></p><br />
+      
+      
+            <%= f.label :email %><br />
             <%= f.email_field :email, autofocus: true %>
-          </div>
-        </div>
-      </div>
+          
     
-    <div class="row">
-      <div class="large-12 columns">
-        <div class="field">
-          <p class="labelo"><%= f.label :password %></p>
+          <%= f.label :password %>
           <% if @minimum_password_length %>
-          <em>(<%= @minimum_password_length %> characters minimum)</em>
+          <em>(<%= @minimum_password_length %> characters minimum)</em><br/>
           <% end %><br />
           <%= f.password_field :password, autocomplete: "off" %>
-        </div>
-      </div>
-    </div>
+        
     
-    <div class="row">
-      <div class="large-12 columns">
-        <div class="field">
           <%= f.label :password_confirmation %><br />
           <%= f.password_field :password_confirmation, autocomplete: "off" %>
+        
+        <div class="row">
+          <div class="large-2 columns">
+            <%= f.submit "Sign up", class:"signbutton button" %>
+          </div>
         </div>
-      </div>
-    </div>
-    
-    <div class="row">
-      <div class="large-2 columns signbutton">
-        <div class="actions">
-          <%= f.submit "Sign up", class:"button" %>
-        </div>
-      </div>
-    </div>
+       
     <% end %>
-    <div class="row">
-      <div class="large-12 columns">
+      <div class="deja">
         <%= render "devise/shared/links" %>
       </div>
-    </div>
 </div>

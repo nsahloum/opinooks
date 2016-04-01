@@ -30,12 +30,12 @@
 }
 
 .alert {
-	width: 100%;
-	background-color: rgba(240, 240, 240, 0.5);
-	padding: 1em;
-	margin-top: 1em;
-	border: 1px solid #ff7743;
-	border-radius: 0.5em;
+	color: #6A6A6A;
+	padding: 1em 0;
+	position: absolute;
+	top: 4em;
+	left: 50%;
+	font-style: italic;
 }
  .pagination {
  	display: none;
@@ -68,7 +68,7 @@
 
 
 .header {
-	padding: 2em 0 1em 0;
+	padding: 1em 0;
 	border-bottom: 1px solid #F2F2F2;
 	position: fixed;
 	z-index: 999;
@@ -266,6 +266,77 @@
 .countresp {
 	font-family: 'Ubuntu', sans-serif;
 	margin-top: 1em;
+}
+
+.form {
+	font-family: 'Ubuntu', sans-serif;
+	color: #32323C;
+}
+
+input {
+	margin-top: 1em;
+}
+
+.labelo {
+	margin-bottom: 0.5em;
+}
+
+[type='text']:focus, [type='password']:focus, [type='email']:focus  {
+	border-color: #FF7743;
+}
+
+[type='text'], [type='password'], [type='email']  {
+	border-radius: .3em;
+}
+
+
+.signbutton {
+	border: 1px solid #FF7743;
+	background-color: rgba(255, 119, 67, 0.0);
+	color: #000;
+	border-radius: .3em;
+	width: 80%;
+	font-size: 1.1em;
+}
+
+.cancelbutton {
+	margin-top: 1em;
+	border: 1px solid #FF7743;
+	background-color: #F9263F;
+	color: #000;
+	border-radius: .3em;
+	width: 80%;
+	font-size: 1.1em;
+}
+
+.signbutton:hover {
+	background-color: rgba(255, 119, 67, 1);
+	color: #fff;
+}
+
+.signbutton:focus {
+	background-color: rgba(255, 119, 67, 1);
+	color: #fff;
+}
+
+.sign {
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 2em;
+	margin: 1em 0;
+}
+
+.cancel {
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 1.5em;
+	margin: 1em 0;
+}
+
+.deja a {
+	color: #000;
+}
+
+.deja a:hover {
+	color: #717171;
 }
 
 
