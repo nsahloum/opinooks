@@ -39,4 +39,8 @@ $(function(){ $(document).foundation(); });
               lastScroll = st;
           });
           
-          
+$(document).ready(function(){
+  setTimeout(function(){
+    $('#flash').remove();
+  }, 3000);
+ })         
