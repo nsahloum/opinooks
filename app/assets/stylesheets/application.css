@@ -211,6 +211,13 @@
 	bottom: 0.35em;
 }
 
+.downcountsign {
+	color : #ff7743;
+	font-size: 3em;
+	position: relative;
+	bottom: 0.35em;
+}
+
 .ouicount {
 	font-family: 'Ubuntu', sans-serif;
 	color: #ff7743;

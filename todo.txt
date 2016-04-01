@@ -7,5 +7,5 @@ continuer comptes oui non sur mobile >> OK
 Arranger les notifs flash
 arranger page debat seul
 ajouter langue
-quand "liké", flèche reste orange
+quand "liké", flèche reste orange yes :) (reste pareil pour dislike)
 ^^ :)

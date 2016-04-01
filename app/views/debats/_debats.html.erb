@@ -27,7 +27,11 @@
               <%= link_to dislike_debat_path(debat), method: :put, remote: true do %>
                 <div class="non">Non</div>
                 <div class="noncount down-<%= debat.id%>"> <%= debat.get_downvotes.size %></div>
-                <div class="downcount doc-<%= debat.id %>"><i class="fa fa-angle-down"></i></div>
+                <% if current_user.voted_down_on? debat %>
+                  <div class="downcountsign doc-<%= debat.id %>"><i class="fa fa-angle-down"></i></div>
+                <% else %>
+                  <div class="downcount doc-<%= debat.id %>"><i class="fa fa-angle-down"></i></div>
+                <% end %>
               <% end %>
             <% else %>
               <%= link_to dislike_debat_path(debat), method: :put do %>

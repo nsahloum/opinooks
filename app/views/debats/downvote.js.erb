@@ -1,3 +1,10 @@
+$( document ).ready(function() {
+<% if current_user.voted_down_on? @debat %>
+   $('.doc-<%= @debat.id %>').css('color', '#ff7743');
+   $('.upc-<%= @debat.id %>').css('color', '#9696A0');
+<% end %>
+});
+
 
 $('.dislike-<%= @debat.id %>').bind('ajax:success', function() {
 

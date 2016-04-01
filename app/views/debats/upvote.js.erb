@@ -1,8 +1,10 @@
 $( document ).ready(function() {
-<% if current_user.voted_for? @debat %>
+<% if current_user.voted_up_on? @debat %>
    $('.upc-<%= @debat.id %>').css('color', '#ff7743');
+   $('.doc-<%= @debat.id %>').css('color', '#9696A0');
 <% end %>
 });
+
 
 
 $('.like-<%= @debat.id %>').bind('ajax:success', function() {
