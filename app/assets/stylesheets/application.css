@@ -339,6 +339,16 @@ input {
 	color: #717171;
 }
 
+.back a, .back {
+	color: #ff7743;
+	font-weight: bold;
+	padding: 0.5em;
+}
+
+.back:hover, .back a:hover {
+	color: #ff8967;
+}
+
 
 @media only screen and (max-width: 1024px) {
 	.footer {
