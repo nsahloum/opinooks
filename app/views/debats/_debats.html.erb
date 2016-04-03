@@ -1,6 +1,6 @@
 
 <% @debats.each do |debat| %>
-      <div class="row">
+      <div class="row debates">
         <div class="small-1 columns count">
           <span class= "like-<%= debat.id %>">
             <% if user_signed_in? %>
@@ -75,12 +75,12 @@
           		<%end%>
           	</span>
           
-          	<span class="opincount"> 514 opinions </span> 
+          	<span class="opincount"> <%= debat.reactions.count %> opinions </span> 
               <span class="reagir"><%= link_to 'Voir les réactions', debat %></span></div>
           </div> 
         
         <div class="small-2 columns opinion">
-          <div class="opincount">514  opinions</div>
+          <div class="opincount"><%= debat.reactions.count %>  opinions</div>
           <div class="reagir"><%= link_to 'Réagir', debat %></div>
         </div>
         

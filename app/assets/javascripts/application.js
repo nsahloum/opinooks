@@ -27,13 +27,13 @@ $(function(){ $(document).foundation(); });
               if (st > lastScroll){
 //secondaryNav disappears when scrolled down
                 $(".footer").css("display","block");
-                $(".header").css("border", "1px solid #F2F2F2")
+                $(".header").css({"border":"1px solid #F2F2F2"})
                 
               } 
               else {
 //secondaryNav disappears when scrolled up
                $(".footer").css("display","none");
-               $(".header").css("border", "none")
+               $(".header").css({"border":"none"})
               }
               //Updates scroll position
               lastScroll = st;

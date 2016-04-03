@@ -37,6 +37,8 @@ gem 'faker',                   '1.4.2'
 
 gem 'friendly_id', '~> 5.1'
 
+gem 'simple_form', '~> 3.2', '>= 3.2.1'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

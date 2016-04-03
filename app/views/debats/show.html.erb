@@ -1,14 +1,26 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="large-12 columns">
+    <%= @debat.title %>
+  </div>
+</div>
+<div class="row">
+<%= @debat.description %>
+</div>
 
-<p>
-  <strong>Title:</strong>
-  <%= @debat.title %>
-</p>
+<!--<%= link_to 'Edit', edit_debat_path(@debat) %>
+<%= link_to 'Back', debats_path %>-->
 
-<p>
-  <strong>Description:</strong>
-  <%= @debat.description %>
-</p>
+<h3 class="comments_title">
+  <%= @debat.reactions.count %> Comments
+</h3>
 
-<%= link_to 'Edit', edit_debat_path(@debat) %> |
-<%= link_to 'Back', debats_path %>
+<div id="comments">
+  <%= render :partial => @debat.reactions %>
+</div>
+<%= simple_form_for [@debat, Reaction.new]  do |f| %>
+  <div class="field">
+    <%= f.text_area :body, class: "form-control" %>
+  </div>
+  <br>
+  <%= f.submit "Add Comment", class: "btn btn-primary" %>
+<% end %>

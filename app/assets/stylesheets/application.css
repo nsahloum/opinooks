@@ -17,7 +17,9 @@
  */
  
 
-
+.debates {
+	
+}
 .under {
 	width: 90%;
 	margin: auto;
@@ -31,10 +33,11 @@
 
 .alert {
 	color: #6A6A6A;
-	padding: 1em 0;
+	padding: 0.5em 0;
 	position: absolute;
-	top: 4em;
-	left: 45%;
+	text-align: center;
+	left: 0;
+	right: 0;
 	font-style: italic;
 }
  .pagination {
@@ -335,6 +338,8 @@ input {
 .deja a {
 	color: #000;
 }
+
+
 
 .deja a:hover {
 	color: #717171;

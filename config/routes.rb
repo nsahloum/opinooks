@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :reactions
   devise_for :users
   resources :users
   resources :debats do
@@ -6,6 +7,7 @@ Rails.application.routes.draw do
       put "like", to:    "debats#upvote"
       put "dislike", to: "debats#downvote"
     end
+    resources :reactions
   end
   root "debats#index"
   

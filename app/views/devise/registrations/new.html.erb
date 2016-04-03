@@ -1,3 +1,4 @@
+<div class="large-8 large-centered columns">
 <div class="form">
     
         <h2 class="sign">Sign up</h2>
@@ -28,13 +29,15 @@
           <%= f.password_field :password_confirmation, autocomplete: "off" %>
         
         <div class="row">
-          <div class="large-2 columns">
+          <div class="large-4 large-centered columns">
             <%= f.submit "Sign up", class:"signbutton button" %>
-          </div>
-        </div>
+          
        
     <% end %>
       <div class="deja">
         <%= render "devise/shared/links" %>
       </div>
+      </div>
+        </div>
+</div>
 </div>
