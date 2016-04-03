@@ -18,11 +18,14 @@
 
 .comments_wrapper .content {
 	font-size: 0.9em;
+	line-height: 1.5em;
 }
 
 
 .bestract .content {
 	color: #555555;
+	line-height: 1.2em;
+
 }
 
 .middle {
