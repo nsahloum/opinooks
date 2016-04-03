@@ -1,11 +1,12 @@
 <%= div_for(reaction) do %>
 	<div class="comments_wrapper">
-			<div class="said"><span class="comaut"><strong><%= reaction.user.name %></strong></span> said:</div>
+			<div class="said">By <span class="comaut"><strong><%= reaction.user.name %></strong></span><span class="auteur"> - submitted <%= time_ago_in_words(reaction.created_at) %> ago</span></div>
 			<div class="content"><%= reaction.body %></div>
-			<p class="auteur">Submitted <%= time_ago_in_words(reaction.created_at) %> ago 
+			<%= link_to like_reaction_path(reaction), method: :put do %>
+  				<i class="fa fa-angle-up"></i>oui <%= reaction.get_upvotes.size %>
+            <% end %>
 			<% if reaction.user == current_user %>
 				- <span class="black"><%= link_to 'Destroy',reaction, method: :delete, data: { confirm: 'Are you sure?' }, class: "destroy" %></span>
 			<% end %>
-			</p>
 	</div>
 <% end %>

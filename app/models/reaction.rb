@@ -1,4 +1,5 @@
 class Reaction < ActiveRecord::Base
-  belongs_to :user
-  belongs_to :debat
+	acts_as_votable
+	belongs_to :user
+	belongs_to :debat
 end
