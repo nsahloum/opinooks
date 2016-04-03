@@ -15,8 +15,88 @@
  *= require foundation_and_overrides
 
  */
- 
 
+.comments_wrapper .content {
+	font-size: 0.9em;
+}
+
+
+.bestract .content {
+	color: #555555;
+}
+
+.middle {
+	border-right: 1px solid #F2F2F2;
+}
+
+.bestract {
+	border-top: 1px solid #F2F2F2;
+	padding-top: 1.3em;
+}
+
+.bestract h3 {
+	padding-bottom: 0.7em;
+}
+
+.sidebar {
+	border-left: 1px solid #F2F2F2;
+	float:right;
+} 
+
+
+.comaut {
+	color: #FF7743;
+}
+
+.said {
+	font-size: 1em;
+	padding-bottom: 0.5em;
+}
+
+strong {font-weight: bold;} 
+
+ .debatshow {
+ 	font-family: 'Ubuntu', sans-serif;
+	font-size: 2em;
+ }
+
+ textarea {
+ 	resize: none;
+ }
+
+ small {
+ 	font-size: 0.8em;
+	color: #9696A0;
+	margin-top: 0.6em;
+	display: block;
+ }
+.soumettre {
+	padding: 1em 0;
+	font-size: 1.5em;
+}
+
+.comments_wrapper {
+	padding: 0.6em 0 1em 0;
+	border-bottom: 1px solid #F2F2F2;
+}
+
+.reactie {
+	color: #B7B7B7;
+}
+
+.react {
+	font-size: 1.5em;
+}
+
+.desc {
+	padding: 1em 0 3em 0;
+	color: #555555;
+	font-style: italic;
+}
+
+.black a, .black {
+	color: #3298A8;
+}
 .debates {
 	
 }
@@ -261,6 +341,7 @@
 	font-family: 'Ubuntu', sans-serif;
 	font-size: 0.85em;
 	line-height: 1.5em;
+	padding-top: 0.5em;
 }
 
 .auteur .pseudo a {
@@ -269,7 +350,7 @@
 
 .countresp {
 	font-family: 'Ubuntu', sans-serif;
-	margin-top: 1em;
+	margin-top: 0.5em;
 }
 
 .form {
@@ -285,7 +366,7 @@ input {
 	margin-bottom: 0.5em;
 }
 
-[type='text']:focus, [type='password']:focus, [type='email']:focus  {
+[type='text']:focus, [type='password']:focus, [type='email']:focus, textarea:focus  {
 	border-color: #FF7743;
 }
 
@@ -302,6 +383,17 @@ input {
 	width: 80%;
 	font-size: 1.1em;
 }
+
+.buttonshow {
+	border: 1px solid #FF7743;
+	background-color: rgba(255, 119, 67, 0.0);
+	color: #000;
+	border-radius: .3em;
+	font-size: 1.1em;
+	margin-right: 0.8em;
+	padding: 0.7em;
+}
+
 
 .cancelbutton {
 	margin-top: 1em;
@@ -322,6 +414,17 @@ input {
 	background-color: rgba(255, 119, 67, 1);
 	color: #fff;
 }
+
+.buttonshow:hover {
+	background-color: rgba(255, 119, 67, 1);
+	color: #fff;
+}
+
+.buttonshow:focus {
+	background-color: rgba(255, 119, 67, 1);
+	color: #fff;
+}
+
 
 .sign {
 	font-family: 'Ubuntu', sans-serif;

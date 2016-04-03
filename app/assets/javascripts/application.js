@@ -15,6 +15,7 @@
 //= require foundation
 //= require turbolinks
 //= require_tree .
+//= require jquery.autosize
 
 $(function(){ $(document).foundation(); });
 
@@ -43,4 +44,8 @@ $(document).ready(function(){
   setTimeout(function(){
     $('#flash').remove();
   }, 3000);
- })         
+ })
+
+$(document).ready(function(){
+  $('textarea').autosize();
+});

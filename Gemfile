@@ -39,6 +39,8 @@ gem 'friendly_id', '~> 5.1'
 
 gem 'simple_form', '~> 3.2', '>= 3.2.1'
 
+gem 'autosize-rails'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

@@ -1,14 +1,11 @@
 <%= div_for(reaction) do %>
-	<div class="comments_wrapper clearfix">
-		<div class="pull-left">
-			<p class="lead"><%= reaction.body %></p>
-			<p><small>Submitted <strong><%= time_ago_in_words(reaction.created_at) %> ago</strong> by <%= reaction.user.name %></small></p>
-		</div>
-
-		<div class="btn-group pull-right">
+	<div class="comments_wrapper">
+			<div class="said"><span class="comaut"><strong><%= reaction.user.name %></strong></span> said:</div>
+			<div class="content"><%= reaction.body %></div>
+			<p class="auteur">Submitted <%= time_ago_in_words(reaction.created_at) %> ago 
 			<% if reaction.user == current_user %>
-				<%= link_to 'Destroy',reaction, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-sm btn-default" %>
+				- <span class="black"><%= link_to 'Destroy',reaction, method: :delete, data: { confirm: 'Are you sure?' }, class: "destroy" %></span>
 			<% end %>
-		</div>
+			</p>
 	</div>
 <% end %>
