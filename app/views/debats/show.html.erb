@@ -1,46 +1,24 @@
 <div class="row">
-
-  
-  <div class="large-9 columns middle">
-    <h1 class="debatshow"><%= @debat.title %></h1>
-    <div class="desc"><%= @debat.description %></div>
-  
-
-
-    <!--<%= link_to 'Edit', edit_debat_path(@debat) %>
-    <%= link_to 'Back', debats_path %>-->
-
-  
-    <div class="react"><%= @debat.reactions.count %> <span class="reactie">Reactions</span></div>
-
-    <div id="comments">
-      <%= render :partial => @debat.reactions %>
+  <div class="large-9 columns">
+    <div class="debatshow">Incidunt cupiditate rerum iste molestiae omnis et rem sequi.</div>
+    <div class="desc">Voluptatem architecto voluptatum occaecati totam eum.</div>
+    <div class="showauteur">Submitted 3 min ago by blabla</div>
+    <div class="buttonsh"><span class="button buttonshow">Oui (350)</span> <span class="button buttonshow">Non (230)</span></div>
+    <div class="reactshow">
+    <%= @debat.reactions.count %> Reactions<br/>
+    <%= render :partial => @debat.reactions %>
     </div>
-    <div class="soumettre">Submit a reaction:</div>
-    <div class="row">
-      <div class="large-6 columns">
-        <%= simple_form_for [@debat, Reaction.new]  do |f| %>
-          <div class="field">
-          <%= f.text_area :body, class: "form-control" %>
-          </div>
-    
-          <div class="row">
-            <div class="large-7 columns">
-              <%= f.submit "Add Comment", class: "button signbutton" %>
-            </div>
-          </div>
-        <% end %>
-      </div>
+    <div class="showform">
+      <%= simple_form_for [@debat, Reaction.new]  do |f| %>
+        <%= f.text_area :body %>
+        <%= f.submit "Add Comment", class: "button signbutton" %> 
+      <% end %>
     </div>
   </div>
-  <div class="large-3 columns sidebar">
-    <div class="buttonsh">
-      <span class="button buttonshow">Oui (350)</span> <span class="button buttonshow">Non (230)</span>
-    </div>
-    <div class="bestract">
-      <h3><strong>Best Reaction:</strong></h3>
-      <div class="content">Pug selvage hammock, hoodie master cleanse tilde cardigan craft beer neutra butcher kale chips pinterest. Artisan post-ironic chartreuse semiotics 8-bit, jean shorts quinoa williamsburg distillery ennui.</div>
-      <div class="auteur">Submitted 3 min ago by <span class="pseudo">blabla</span>
+  <div class="large-3 columns">
+    <div class="best">Best Reaction:</div>
+    <div class="bestcontent">
+      Cliche meh readymade migas, wayfarers keytar umami fingerstache pickled retro wolf health goth
     </div>
   </div>
 </div>
