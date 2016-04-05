@@ -11,26 +11,54 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160402014445) do
+ActiveRecord::Schema.define(version: 20160405101021) do
 
   create_table "debats", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
     t.integer  "user_id"
+    t.integer  "cached_votes_total",      default: 0
+    t.integer  "cached_votes_score",      default: 0
+    t.integer  "cached_votes_up",         default: 0
+    t.integer  "cached_votes_down",       default: 0
+    t.integer  "cached_weighted_score",   default: 0
+    t.integer  "cached_weighted_total",   default: 0
+    t.float    "cached_weighted_average", default: 0.0
   end
 
+  add_index "debats", ["cached_votes_down"], name: "index_debats_on_cached_votes_down"
+  add_index "debats", ["cached_votes_score"], name: "index_debats_on_cached_votes_score"
+  add_index "debats", ["cached_votes_total"], name: "index_debats_on_cached_votes_total"
+  add_index "debats", ["cached_votes_up"], name: "index_debats_on_cached_votes_up"
+  add_index "debats", ["cached_weighted_average"], name: "index_debats_on_cached_weighted_average"
+  add_index "debats", ["cached_weighted_score"], name: "index_debats_on_cached_weighted_score"
+  add_index "debats", ["cached_weighted_total"], name: "index_debats_on_cached_weighted_total"
   add_index "debats", ["user_id"], name: "index_debats_on_user_id"
 
   create_table "reactions", force: :cascade do |t|
     t.integer  "debat_id"
     t.text     "body"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
+    t.integer  "cached_votes_total",      default: 0
+    t.integer  "cached_votes_score",      default: 0
+    t.integer  "cached_votes_up",         default: 0
+    t.integer  "cached_votes_down",       default: 0
+    t.integer  "cached_weighted_score",   default: 0
+    t.integer  "cached_weighted_total",   default: 0
+    t.float    "cached_weighted_average", default: 0.0
   end
 
+  add_index "reactions", ["cached_votes_down"], name: "index_reactions_on_cached_votes_down"
+  add_index "reactions", ["cached_votes_score"], name: "index_reactions_on_cached_votes_score"
+  add_index "reactions", ["cached_votes_total"], name: "index_reactions_on_cached_votes_total"
+  add_index "reactions", ["cached_votes_up"], name: "index_reactions_on_cached_votes_up"
+  add_index "reactions", ["cached_weighted_average"], name: "index_reactions_on_cached_weighted_average"
+  add_index "reactions", ["cached_weighted_score"], name: "index_reactions_on_cached_weighted_score"
+  add_index "reactions", ["cached_weighted_total"], name: "index_reactions_on_cached_weighted_total"
   add_index "reactions", ["debat_id"], name: "index_reactions_on_debat_id"
   add_index "reactions", ["user_id"], name: "index_reactions_on_user_id"
 

@@ -7,6 +7,8 @@ class DebatsController < ApplicationController
   def index
     @debats = Debat.all.order('created_at DESC').page(params[:page]).per_page(10)
     @user = current_user
+    @debathigh = Debat.highest_voted.limit(1)
+    
   end
 
   # GET /debats/1
