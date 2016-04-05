@@ -14,6 +14,7 @@ class DebatsController < ApplicationController
   # GET /debats/1
   # GET /debats/1.json
   def show
+    @reactionh = Reaction.highest_voted.limit(1)
   end
 
   # GET /debats/new
