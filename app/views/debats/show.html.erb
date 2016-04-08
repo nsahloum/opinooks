@@ -1,25 +1,77 @@
 <div class="row">
-  <div class="large-9 columns">
-    <div class="debatshow">Incidunt cupiditate rerum iste molestiae omnis et rem sequi.</div>
-    <div class="desc">Voluptatem architecto voluptatum occaecati totam eum.</div>
-    <div class="showauteur">Submitted 3 min ago by blabla</div>
-    <div class="buttonsh"><span class="button buttonshow">Oui (350)</span> <span class="button buttonshow">Non (230)</span></div>
+  <div class="likeshow">
+    <div class="small-1 columns count">
+      <span class= "like-<%= @debat.id %>">
+        <% if user_signed_in? %>
+          <%= link_to like_debat_path(@debat), method: :put, remote: true do %>
+            <% if current_user.voted_up_on? @debat %>
+              <div class="upcountsign upc-<%= @debat.id %>"><i class="fa fa-angle-up"></i></div>
+            <% else %>
+              <div class="upcount upc-<%= @debat.id %>"><i class="fa fa-angle-up"></i></div>
+            <% end %>
+            <div class="ouicount up-<%= @debat.id %>"><%= @debat.get_upvotes.size %></div>
+            <div class="oui">Oui</div>
+          <% end %>
+        <% else %>
+          <%= link_to like_debat_path(@debat), method: :put do %>
+            <div class="upcount"><i class="fa fa-angle-up"></i></div>
+            <div class="ouicount up-<%= @debat.id %>"><%= @debat.get_upvotes.size %></div>
+            <div class="oui">Oui</div>
+          <% end %>
+        <% end %>
+      </span>
+        
+      <span class= "dislike-<%= @debat.id %>">
+        <% if user_signed_in? %> 
+          <%= link_to dislike_debat_path(@debat), method: :put, remote: true do %>
+            <div class="non">Non</div>
+            <div class="noncount down-<%= @debat.id%>"> <%= @debat.get_downvotes.size %></div>
+            <% if current_user.voted_down_on? @debat %>
+              <div class="downcountsign doc-<%= @debat.id %>"><i class="fa fa-angle-down"></i></div>
+            <% else %>
+              <div class="downcount doc-<%= @debat.id %>"><i class="fa fa-angle-down"></i></div>
+            <% end %>
+          <% end %>
+        <% else %>
+          <%= link_to dislike_debat_path(@debat), method: :put do %>
+            <div class="non">Non</div>
+            <div class="noncount down-<%= @debat.id%>"> <%= @debat.get_downvotes.size %></div>
+            <div class="downcount doc-<%= @debat.id %>"><i class="fa fa-angle-down"></i></div>
+          <% end %>
+        <% end %>
+      </span>
+    </div>
+  </div>
+  
+  <div class="large-8 columns">
+    <div class="debatshow"><%= @debat.title %></div>
+    <div class="desc"><%= @debat.description %></div>
+    <div class="auteur">Submitted <%= time_ago_in_words(@debat.created_at) %> ago by <span class="pseudo"><%= link_to @debat.user.name, @debat.user %></span></div>
     <div class="reactshow">
-    <%= @debat.reactions.count %> Reactions<br/>
+    <div class="opishow"><%= @debat.reactions.count %> Opinions<br/></div>
     <%= render :partial => @debat.reactions %>
     </div>
-    <div class="showform">
-      <%= simple_form_for [@debat, Reaction.new]  do |f| %>
-        <%= f.text_area :body %>
-        <%= f.submit "Add Comment", class: "button signbutton" %> 
-      <% end %>
+    <div class="row">
+      <div class="large-12 columns">
+        <div class="showform">
+          <%= simple_form_for [@debat, Reaction.new]  do |f| %>
+            <%= f.text_area :body %>
+            <div class="row">
+              <div class="large-4 columns">
+                <%= f.submit "Add Comment", class: "button signbutton" %> 
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
     </div>
   </div>
   <div class="large-3 columns">
     <div class="best">Best Reaction:</div>
     <div class="bestcontent">
-     <% @reactionh.each do |x| %>
-       <%= x.body %>
+     <% @reactionh.each do |bestopin| %>
+       <%= bestopin.body %>
+       by <%= bestopin.user.name %>
      <% end %>
     </div>
   </div>

@@ -2,11 +2,19 @@
 	<div class="comments_wrapper">
 			<div class="said">By <span class="comaut"><strong><%= reaction.user.name %></strong></span><span class="auteur"> - submitted <%= time_ago_in_words(reaction.created_at) %> ago</span></div>
 			<div class="content"><%= reaction.body %></div>
-			<%= link_to like_reaction_path(reaction), method: :put do %>
-  				<i class="fa fa-angle-up"></i>oui <%= reaction.get_upvotes.size %>
-            <% end %>
+          	
+	  			<%= link_to like_reaction_path(reaction), method: :put do %>
+	  				<span class="oui"><i class="fa fa-angle-up"></i> D'accord</span>
+	  				<span class="ouicount"><%= reaction.get_upvotes.size %></span> 
+	  			<% end %>
+	  		
+	  			<%= link_to dislike_reaction_path(reaction), method: :put do %>
+	  				<span class="non"><i class="fa fa-angle-down"></i> Pas d'accord</span>
+	  				<span class="noncount"><%= reaction.get_downvotes.size %></span> 
+	  			<% end %>
+    
 			<% if reaction.user == current_user %>
-				- <span class="black"><%= link_to 'Destroy',reaction, method: :delete, data: { confirm: 'Are you sure?' }, class: "destroy" %></span>
+				- <span class="destroy"><%= link_to 'Delete',reaction, method: :delete, data: { confirm: 'Are you sure?' } %></span>
 			<% end %>
 	</div>
 <% end %>

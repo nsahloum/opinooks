@@ -16,6 +16,17 @@
 
  */
 
+
+.opishow { 
+	font-size: 1.5em;
+	margin: 1.2em 0 0.5em 0;
+}
+
+.likeshow {
+	position: relative;
+	top: -2em;
+}
+
 .comments_wrapper .content {
 	font-size: 0.9em;
 	line-height: 1.5em;
@@ -98,7 +109,7 @@ strong {font-weight: bold;}
 }
 
 .buttonsh {
-	margin-bottom: 2em;
+	margin: 2em 0;
 }
 
 .black a, .black {
@@ -334,6 +345,15 @@ strong {font-weight: bold;}
 	font-size: 0.8em;
 	margin-top: 0.5em;
 }
+
+.destroy a {
+
+	font-family: 'Ubuntu', sans-serif;
+	color : #DA2828;
+	font-size: 0.8em;
+	margin-top: 0.5em;
+}
+
 
 .opincount {
 	color: #78787e;
