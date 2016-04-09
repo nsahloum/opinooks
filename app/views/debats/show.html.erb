@@ -43,7 +43,7 @@
     </div>
   </div>
   
-  <div class="large-8 columns">
+  <div class="large-8 columns middle">
     <div class="debatshow"><%= @debat.title %></div>
     <div class="desc"><%= @debat.description %></div>
     <div class="auteur">Submitted <%= time_ago_in_words(@debat.created_at) %> ago by <span class="pseudo"><%= link_to @debat.user.name, @debat.user %></span></div>
@@ -66,13 +66,21 @@
       </div>
     </div>
   </div>
-  <div class="large-3 columns">
-    <div class="best">Best Reaction:</div>
-    <div class="bestcontent">
+  <div class="large-3 columns sidebar">
+    <% if @debat.reactions.count <= 3 %>
+      And you what do you think?
+  
+    <%elsif @debat.reactions.count > 3 %>
+
+    <div class="best">Top 3 Best Opinions:</div>
+    
      <% @reactionh.each do |bestopin| %>
-       <%= bestopin.body %>
-       by <%= bestopin.user.name %>
+      <div class="bestcontent">
+       <%= bestopin.body %><br>
+       <div class="auteur">by <span class="pseudo"><%= link_to bestopin.user.name, bestopin.user %></span></div>
+      </div>
      <% end %>
-    </div>
+   
   </div>
+  <% end %>
 </div>

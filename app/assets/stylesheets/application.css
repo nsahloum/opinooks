@@ -17,6 +17,13 @@
  */
 
 
+.bestcontent {
+	background-color: #F4F4F4;
+	padding: 0.5em;
+	margin: 1em 0;
+	border: 1px solid #e5e5e5;
+}
+
 .opishow { 
 	font-size: 1.5em;
 	margin: 1.2em 0 0.5em 0;
