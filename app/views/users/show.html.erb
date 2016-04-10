@@ -1,2 +1,5 @@
-<%= @user.name %><br>
-<%= @user.debats.size %>
+<div class="usernameshow"><%= @user.name %></div>
+<div class="auteur">created <%= @user.debats.size %> debats</div>
+<% @user.debats.each do |debat| %>
+	<div class="debatshow"><%= debat.title %></div>
+<% end %>
