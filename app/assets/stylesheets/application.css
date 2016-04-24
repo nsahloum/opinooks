@@ -21,10 +21,11 @@
 }
 
 .bestcontent {
-	background-color: #F4F4F4;
+	background-color: #fff;
 	padding: 0.5em;
 	margin: 1em 0;
-	border: 1px solid #e5e5e5;
+	border: 1px solid #ff7743;
+	border-radius: 0.5em;
 }
 
 .opishow { 
