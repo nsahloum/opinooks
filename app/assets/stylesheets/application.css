@@ -126,9 +126,7 @@ strong {font-weight: bold;}
 .black a, .black {
 	color: #3298A8;
 }
-.debates {
-	
-}
+
 .under {
 	width: 90%;
 	margin: auto;
@@ -138,6 +136,7 @@ strong {font-weight: bold;}
 	padding-top: 7em;
 	padding-bottom: 4em;
 	background-color: #FEFEFE;
+	width
 }
 
 .alert {
@@ -269,10 +268,16 @@ strong {font-weight: bold;}
 	padding-left: 0.2em;
 }
 
-#lang a {
+.lang a {
 	color: #ff7743;
 	font-family: 'Ubuntu', sans-serif;
 	font-weight: bold;
+}
+
+.langu {
+	color: #ff7743;
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 1.2em;
 }
 
 .dlang {

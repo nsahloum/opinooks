@@ -1,0 +1,8 @@
+$('#product').append('<%= j render "debatsuser" %>');
+<% if @debatsuser.next_page %>
+	$('.pagination').replaceWith('<%= will_paginate(@debatsuser) %>');
+<% else %>
+	$('.pagination').remove();
+<% end %>
+<% sleep 1 %>
+

@@ -33,11 +33,15 @@
     </div>
     
     <div class="ccontenu">  
-        <div class="alert" id="flash">
-        <% flash.each do |name, msg| %>
-          <%= content_tag :div, msg %>
-        <% end %>
+      <div class="row">
+        <div class="large-5 large-centered columns">
+          <div class="alert" id="flash">
+          <% flash.each do |name, msg| %>
+            <%= content_tag :div, msg %>
+          <% end %>
+          </div>
         </div>
+      </div>
      
         <div class="row">
           <div class= "large-12 columns">

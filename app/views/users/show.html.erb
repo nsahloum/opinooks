@@ -1,4 +1,7 @@
-<div class="usernameshow"><%= @user.debats.size %> by <%= @user.name %></div>
-<% @user.debats.each do |debat| %>
-	<div class="debatshow"><%= debat.title %></div>
-<% end %>
+<div class="under">
+	<div class="langu"><%= @user.debats.size %> debats by <%= @user.name %>:</div>
+	<div id="product">
+	  <%= render "debatsuser" %>
+	</div>
+	<%= will_paginate @debatsuser %>
+</div>

@@ -1,0 +1,87 @@
+<% @debatsuser.each do |debat| %>
+		<div class="row debates">
+        <div class="small-1 columns count">
+          <span class= "like-<%= debat.id %>">
+            <% if user_signed_in? %>
+              <%= link_to like_debat_path(debat), method: :put, remote: true do %>
+                <% if current_user.voted_up_on? debat %>
+                  <div class="upcountsign upc-<%= debat.id %>"><i class="fa fa-angle-up"></i></div>
+                <% else %>
+                  <div class="upcount upc-<%= debat.id %>"><i class="fa fa-angle-up"></i></div>
+                <% end %>
+                <div class="ouicount up-<%= debat.id %>"><%= debat.get_upvotes.size %></div>
+                <div class="oui">Oui</div>
+              <% end %>
+            <% else %>
+              <%= link_to like_debat_path(debat), method: :put do %>
+                <div class="upcount"><i class="fa fa-angle-up"></i></div>
+                <div class="ouicount up-<%= debat.id %>"><%= debat.get_upvotes.size %></div>
+                <div class="oui">Oui</div>
+              <% end %>
+            <% end %>
+          </span>
+            
+          <span class= "dislike-<%= debat.id %>">
+            <% if user_signed_in? %> 
+              <%= link_to dislike_debat_path(debat), method: :put, remote: true do %>
+                <div class="non">Non</div>
+                <div class="noncount down-<%= debat.id%>"> <%= debat.get_downvotes.size %></div>
+                <% if current_user.voted_down_on? debat %>
+                  <div class="downcountsign doc-<%= debat.id %>"><i class="fa fa-angle-down"></i></div>
+                <% else %>
+                  <div class="downcount doc-<%= debat.id %>"><i class="fa fa-angle-down"></i></div>
+                <% end %>
+              <% end %>
+            <% else %>
+              <%= link_to dislike_debat_path(debat), method: :put do %>
+                <div class="non">Non</div>
+                <div class="noncount down-<%= debat.id%>"> <%= debat.get_downvotes.size %></div>
+                <div class="downcount doc-<%= debat.id %>"><i class="fa fa-angle-down"></i></div>
+              <% end %>
+            <% end %>
+          </span>
+        </div>
+        
+        <div class="large-9 medium-9 small-12 columns">
+          <div class="debat"><%= link_to debat.title, debat %></div>
+          <div class="auteur">Submitted <%= time_ago_in_words(debat.created_at) %> ago - <span class="black"><%= link_to "Voir les opinions", debat %></span></div>
+          <div class="countresp">
+          	<span class= "like-<%= debat.id %>">
+          		<% if user_signed_in? %>
+          			<%= link_to like_debat_path(debat), method: :put, remote: true do %>
+          				<span class="oui"><i class="fa fa-angle-up"></i> Oui</span>
+          				<span class="ouicount up-<%= debat.id %>"><%= debat.get_upvotes.size %></span> 
+          			<% end %>
+          		<% else %>
+          			<%= link_to like_debat_path(debat), method: :put do %>
+          				<span class="oui"><i class="fa fa-angle-up"></i> Oui</span>
+          				<span class="ouicount up-<%= debat.id %>"><%= debat.get_upvotes.size %></span> 
+          			<% end %>
+          		<% end %>
+          	</span>
+          
+          	<span class= "dislike-<%= debat.id %>">
+          		<% if user_signed_in? %>
+          			<%= link_to dislike_debat_path(debat), method: :put, remote: true do %>
+          				<span class="non"><i class="fa fa-angle-down"></i> Non</span> 
+          				<span class="noncount down-<%= debat.id%>"><%= debat.get_downvotes.size %></span> 
+          			<% end %>
+          		<%else%>
+          			<%= link_to dislike_debat_path(debat), method: :put do %>
+          				<span class="non"><i class="fa fa-angle-down"></i> Non</span> 
+          				<span class="noncount down-<%= debat.id%>"><%= debat.get_downvotes.size %></span> 
+          			<% end %>
+          		<%end%>
+          	</span>
+          
+          	<span class="opincount"> <%= debat.reactions.count %> opinions </span> 
+            </div>
+          </div> 
+        
+        <div class="small-2 columns opinion">
+          <div class="opincount"><%= debat.reactions.count %>  opinions</div>
+          <div class="reagir"><%= link_to 'Réagir', debat %></div>
+        </div>
+        
+      </div>
+	<% end %>
