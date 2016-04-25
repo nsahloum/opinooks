@@ -25,7 +25,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'pg'
 
-gem 'foundation-rails'
+gem 'foundation-rails', '5.4.3.1'
 
 gem 'acts_as_votable', '~> 0.10.0'
 
