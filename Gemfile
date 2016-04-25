@@ -25,7 +25,11 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'pg'
 
-gem 'foundation-rails', '5.4.3.1'
+gem 'foundation-rails'
+
+gem 'sass', '~> 3.4', '>= 3.4.22'
+
+gem 'compass', '~> 1.0', '>= 1.0.3'
 
 gem 'acts_as_votable', '~> 0.10.0'
 
