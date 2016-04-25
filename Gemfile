@@ -27,10 +27,6 @@ gem 'pg'
 
 gem 'foundation-rails'
 
-gem 'sass', '~> 3.4', '>= 3.4.22'
-
-gem 'compass', '~> 1.0', '>= 1.0.3'
-
 gem 'acts_as_votable', '~> 0.10.0'
 
 gem 'devise', '~> 3.5', '>= 3.5.6'
