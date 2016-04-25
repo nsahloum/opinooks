@@ -1,12 +1,20 @@
-<div class="under">
-	<div class="langu"><%= @user.debats.size %> debats by <%= @user.name %>:</div>
-	<div id="product">
-	  <%= render "debatsuser" %>
+<% if @user.debats.size > 0 %>
+	<div class="under">
+		<div class="langu"><%= @user.debats.size %> debats by <%= @user.name %>:</div>
+		<div id="product">
+		  <%= render "debatsuser" %>
+		</div>
+		<div class="row columns footer">
+	      <div class="large-12 columns">
+	        <span class="arrow"><%= link_to ' <i class="fa fa-arrow-up"></i>'.html_safe %></span>
+	      </div>
+	    </div>
+		<%= will_paginate @debatsuser %>
 	</div>
-	<div class="row columns footer">
-      <div class="large-12 columns">
-        <span class="arrow"><%= link_to ' <i class="fa fa-arrow-up"></i>'.html_safe %></span>
-      </div>
-    </div>
-	<%= will_paginate @debatsuser %>
-</div>
+<% else %>
+	<% if @user == current_user %>
+		<div class="langu">You haven't created any debat yet</div>
+	<% else %>
+		<div class="langu"><%= @user.name %> hasn't created any debat yet</div>
+	<%end%>
+<% end %>

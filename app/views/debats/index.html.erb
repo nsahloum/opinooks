@@ -7,7 +7,7 @@
 
       <div class="large-8 columns" id="menubox">
           <% if user_signed_in? %>
-            <a href="#">My debats </a>
+            <a href="#"><%= link_to 'My debats', current_user %> </a>
           <% end %>
       </div>  
 </div>
