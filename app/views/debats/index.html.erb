@@ -6,6 +6,8 @@
       </div>
 
       <div class="large-8 columns" id="menubox">
+          <a href="#"><%= link_to 'New'%> </a>
+          <a href="#"><%= link_to 'Top' %> </a>
           <% if user_signed_in? %>
             <a href="#"><%= link_to 'My debats', current_user %> </a>
           <% end %>
