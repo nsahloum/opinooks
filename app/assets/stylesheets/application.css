@@ -127,11 +127,6 @@ strong {font-weight: bold;}
 	color: #3298A8;
 }
 
-.under {
-	width: 90%;
-	margin: auto;
-} 
-
 .ccontenu {
 	padding-top: 7em;
 	padding-bottom: 4em;
@@ -188,9 +183,10 @@ strong {font-weight: bold;}
 
 .footer {
 	display: none;
-	padding: 2em 3em 1em 0;
+	padding: 0.2em;
 	border-bottom: 1px solid #F2F2F2;
 	position: fixed;
+	right: 0em;
 	bottom: 0px;
 	text-align: right;
 	z-index: 999;
@@ -500,11 +496,6 @@ input {
 }
 
 
-@media only screen and (max-width: 1024px) {
-	.footer {
-	padding: 2em 0.5em 1em 0;
-	}
-}
 
 @media only screen and (max-width: 768px) {
 	.ann {
