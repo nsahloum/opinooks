@@ -6,10 +6,10 @@
       </div>
 
       <div class="large-8 columns" id="menubox">
-          <a href="#"><%= link_to 'New'%> </a>
-          <a href="#"><%= link_to 'Top' %> </a>
+          <%= sort_link "created_at", "Added On" %>
+          <%= sort_link "cached_votes_total", "Top" %>
           <% if user_signed_in? %>
-            <a href="#"><%= link_to 'My debats', current_user %> </a>
+            <%= link_to 'My debats', current_user %>
           <% end %>
       </div>  
 </div>

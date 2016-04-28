@@ -1,14 +1,13 @@
 class DebatsController < ApplicationController
   before_action :set_debat, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate_user!, except: [:show, :index]
+  helper_method :sort_column, :sort_direction
 
   # GET /debats
   # GET /debats.json
   def index
-    @debats = Debat.highest_voted.page(params[:page]).per_page(10)
+    @debats = Debat.order("#{sort_column} #{sort_direction}").page(params[:page]).per_page(10)
     @user = current_user
-    @debathigh = Debat.highest_voted.limit(1)
-    
   end
 
   # GET /debats/1
@@ -99,5 +98,17 @@ class DebatsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def debat_params
       params.require(:debat).permit(:title, :description)
+    end
+    
+    def sortable_columns
+    ["created_at", "cached_votes_total"]
+    end
+
+    def sort_column
+      sortable_columns.include?(params[:column]) ? params[:column] : "created_at"
+    end
+
+    def sort_direction
+      %w[asc desc].include?(params[:direction]) ? params[:direction] : "desc"
     end
 end
