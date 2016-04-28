@@ -6,4 +6,7 @@ class Debat < ActiveRecord::Base
     def to_param
         "#{id} #{title}".parameterize
     end
+    def self.search(search)
+        where("title LIKE ? OR description LIKE ?", "%#{search}%", "%#{search}%")
+    end
 end

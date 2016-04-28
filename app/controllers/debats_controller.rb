@@ -6,8 +6,13 @@ class DebatsController < ApplicationController
   # GET /debats
   # GET /debats.json
   def index
-    @debats = Debat.order("#{sort_column} #{sort_direction}").page(params[:page]).per_page(10)
+    
     @user = current_user
+    if params[:search]
+     @debats = Debat.search(params[:search]).order("#{sort_column} #{sort_direction}").page(params[:page]).per_page(10)
+    else
+      @debats = Debat.order("#{sort_column} #{sort_direction}").page(params[:page]).per_page(10)
+    end
   end
 
   # GET /debats/1

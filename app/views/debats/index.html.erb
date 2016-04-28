@@ -9,6 +9,10 @@
           <% if user_signed_in? %>
             <%= link_to 'My debats', current_user %>
           <% end %>
+          <%= form_tag(debats_path, :method => "get", id: "search-form") do %>
+          <%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
+          <%= submit_tag "Search" %>
+          <% end %>
       </div>  
 </div>
 
@@ -16,13 +20,14 @@
 
 
 <div id="products">
-  <%= render "debats" %>
+  <% if @debats.present? %>
+    <%= render "debats" %>
+  <% else %>
+    <p>There are no posts containing the term(s) <%= params[:search] %>.</p>
+<% end %>
 </div>
 
 <%= will_paginate @debats %>
-
- 
-   
 
 
 <div class="row footer">
