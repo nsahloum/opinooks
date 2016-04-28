@@ -6,7 +6,4 @@ class Debat < ActiveRecord::Base
     def to_param
         "#{id} #{title}".parameterize
     end
-    def self.highest_voted
-        self.order("cached_votes_total DESC")
-    end
 end
