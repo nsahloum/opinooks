@@ -16,6 +16,10 @@
 
  */
 
+#search-form {
+	margin-top: 2em;
+}
+
 .usernameshow {
 	font-size: 2em;
 }
@@ -410,7 +414,6 @@ input {
 [type='text'], [type='password'], [type='email']  {
 	border-radius: .3em;
 }
-
 
 .signbutton {
 	border: 1px solid #FF7743;

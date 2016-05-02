@@ -1,19 +1,26 @@
 <div class="row menugroup">
-      <div class="large-2 columns">
-        <span class="lang"><%= link_to 'Create a debat', new_debat_path %></span>
+      <div class="row">
+        <div class="large-2 columns">
+          <span class="lang"><%= link_to 'Create a debat', new_debat_path %></span>
+        </div>
+    
+        
+        <div class="large-8 columns" id="menubox">
+            <%= sort_link "cached_votes_total", "By Popularity" %>
+            <%= sort_link "created_at", "By Date" %>
+            <% if user_signed_in? %>
+              <%= link_to 'My debats', current_user %>
+            <% end %>
+        </div>
       </div>
-
-      <div class="large-8 columns" id="menubox">
-          <%= sort_link "cached_votes_total", "By Opinions" %>
-          <%= sort_link "created_at", "By Date" %>
-          <% if user_signed_in? %>
-            <%= link_to 'My debats', current_user %>
-          <% end %>
+      
+      <div class="row">
+        <div class="medium-3 columns">
           <%= form_tag(debats_path, :method => "get", id: "search-form") do %>
-          <%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
-          <%= submit_tag "Search" %>
+            <%= text_field_tag :search, params[:search], placeholder: "Search Debats " %>
           <% end %>
-      </div>  
+        </div>
+      </div>
 </div>
 
 
