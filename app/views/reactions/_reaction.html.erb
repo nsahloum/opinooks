@@ -1,6 +1,6 @@
 <%= div_for(reaction) do %>
 	<div class="comments_wrapper">
-			<div class="said">By <span class="comaut"><strong><%= reaction.user.name %></strong></span><span class="auteur"> - submitted <%= time_ago_in_words(reaction.created_at) %> ago</span></div>
+			<div class="said">By <span class="comaut"><strong><%= link_to reaction.user.name, reaction.user %></strong></span><span class="auteur"> - submitted <%= time_ago_in_words(reaction.created_at) %> ago</span></div>
 			<div class="content"><%= reaction.body %></div>
           	
 	  			<%= link_to like_reaction_path(reaction), method: :put do %>
