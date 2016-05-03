@@ -4,12 +4,12 @@
 			<div class="content"><%= reaction.body %></div>
           	
 	  			<%= link_to like_reaction_path(reaction), method: :put do %>
-	  				<span class="oui"><i class="fa fa-angle-up"></i> D'accord</span>
+	  				<span class="oui"><i class="fa fa-angle-up"></i>Agree</span>
 	  				<span class="ouicount"><%= reaction.get_upvotes.size %></span> 
 	  			<% end %>
 	  		
 	  			<%= link_to dislike_reaction_path(reaction), method: :put do %>
-	  				<span class="non"><i class="fa fa-angle-down"></i> Pas d'accord</span>
+	  				<span class="non"><i class="fa fa-angle-down"></i> Don't agree</span>
 	  				<span class="noncount"><%= reaction.get_downvotes.size %></span> 
 	  			<% end %>
     

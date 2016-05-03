@@ -44,7 +44,11 @@
         
         <div class="large-9 medium-9 small-12 columns">
           <div class="debat"><%= link_to debat.title, debat %></div>
-          <div class="auteur">Submitted <%= time_ago_in_words(debat.created_at) %> ago - <span class="black"><%= link_to "Voir les opinions", debat %></span></div>
+          <div class="auteur">Submitted <%= time_ago_in_words(debat.created_at) %> ago - <span class="black"><%= link_to "Voir les opinions", debat %></span>
+          <% if @user == current_user %>
+          - <span class="destroy"><%= link_to 'Delete',debat, method: :delete, data: { confirm: 'Are you sure?' } %></span>
+          <% end %>
+          </div>
           <div class="countresp">
           	<span class= "like-<%= debat.id %>">
           		<% if user_signed_in? %>

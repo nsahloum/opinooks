@@ -13,7 +13,7 @@
 	</div>
 <% else %>
 	<% if @user == current_user %>
-		<div class="langu">You haven't created any debat yet</div>
+		<div class="langu">You don't have debat</div>
 	<% else %>
 		<div class="langu"><%= @user.name %> hasn't created any debat yet</div>
 	<%end%>
