@@ -10,13 +10,13 @@
                   <div class="upcount upc-<%= debat.id %>"><i class="fa fa-angle-up"></i></div>
                 <% end %>
                 <div class="ouicount up-<%= debat.id %>"><%= debat.get_upvotes.size %></div>
-                <div class="oui">Oui</div>
+                <div class="oui">Yes</div>
               <% end %>
             <% else %>
               <%= link_to like_debat_path(debat), method: :put do %>
                 <div class="upcount"><i class="fa fa-angle-up"></i></div>
                 <div class="ouicount up-<%= debat.id %>"><%= debat.get_upvotes.size %></div>
-                <div class="oui">Oui</div>
+                <div class="oui">Yes</div>
               <% end %>
             <% end %>
           </span>
@@ -24,7 +24,7 @@
           <span class= "dislike-<%= debat.id %>">
             <% if user_signed_in? %> 
               <%= link_to dislike_debat_path(debat), method: :put, remote: true do %>
-                <div class="non">Non</div>
+                <div class="non">No</div>
                 <div class="noncount down-<%= debat.id%>"> <%= debat.get_downvotes.size %></div>
                 <% if current_user.voted_down_on? debat %>
                   <div class="downcountsign doc-<%= debat.id %>"><i class="fa fa-angle-down"></i></div>
@@ -34,7 +34,7 @@
               <% end %>
             <% else %>
               <%= link_to dislike_debat_path(debat), method: :put do %>
-                <div class="non">Non</div>
+                <div class="non">No</div>
                 <div class="noncount down-<%= debat.id%>"> <%= debat.get_downvotes.size %></div>
                 <div class="downcount doc-<%= debat.id %>"><i class="fa fa-angle-down"></i></div>
               <% end %>
