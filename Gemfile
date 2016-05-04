@@ -33,7 +33,7 @@ gem 'devise', '~> 3.5', '>= 3.5.6'
 
 gem 'will_paginate', '~> 3.1'
 
-gem 'faker',                   '1.4.2'
+gem 'faker', '~> 1.6', '>= 1.6.3'
 
 gem 'friendly_id', '~> 5.1'
 
