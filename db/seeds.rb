@@ -10,18 +10,18 @@
 #              password:              "foobarfoobar",
 #              password_confirmation: "foobarfoobar")
 
-20.times do |n|
-  name  = Faker::Name.name
-  email = "example-#{n+1}@raitutorial.org"
-  password = "passwordpassword"
-  @user = User.create!(name: name,
-               email: email,
-               password:              password,
-               password_confirmation: password)
-end
-users = User.order(:created_at).take(20)
-20.times do
-  title = Faker::Shakespeare.hamlet_quote
+# 40.times do |n|
+#   name  = Faker::Name.name
+#   email = "example-#{n+1}@raitutorial.org"
+#   password = "passwordpassword"
+#   @user = User.create!(name: name,
+#                email: email,
+#                password:              password,
+#                password_confirmation: password)
+# end
+users = User.order(:created_at).take(40)
+40.times do
+  title = Faker::Shakespeare.romeo_and_juliet_quote
   description = Faker::Shakespeare.romeo_and_juliet_quote
   users.each { |user| user.debats.create!(description: description, title: title) }
 end

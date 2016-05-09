@@ -89,3 +89,8 @@
         
       </div>
 	<% end %>
+  
+  You gave <%= @reactionsuser.size %> opinions on:<br>
+  <% @reactionsuser.each do |reaction| %>
+    <%= reaction.debat.title %><br>
+  <% end %>

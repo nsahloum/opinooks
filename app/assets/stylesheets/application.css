@@ -242,6 +242,10 @@ strong {font-weight: bold;}
 	color: #32323c;
 }
 
+#menutop .signin a {
+	color: #32323c;
+}
+
 #menutop .signin:hover {
 	color: #4b4b4b;
 }

@@ -16,7 +16,7 @@
 
   <body>
     <div class="row header expanded columns">
-      <div class="large-10 large-centered columns">
+      <div class="large-12 columns">
         <div class="small-3 columns">
           <h1><%= link_to "Opin", root_path, class: "titlelogo" %><%= link_to "oo", root_path, class:"titleor" %><%= link_to "ks", root_path, class:"titlelogo" %></h1>
         </div>  
@@ -24,6 +24,7 @@
           <% if user_signed_in? %>
             <%= link_to 'Account', edit_user_registration_path, class:"signup" %>
   					<%= link_to 'Sign out', destroy_user_session_path, class:"signin", :method => :delete %>
+            <span class="signin"><%= link_to '<i class="fa fa-exchange" aria-hidden="true"></i>'.html_safe, current_user %></span>
 					<% else %>
             <%= link_to 'Sign Up', new_user_registration_path, class: "signup" %>
             <%= link_to 'Sign In', new_user_session_path, class: "signin" %>

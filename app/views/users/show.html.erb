@@ -1,6 +1,10 @@
 <% if @user.debats.size > 0 %>
 	<div class="under">
+		<% if @user == current_user %>
+		<div class="langu">Your <%= @user.debats.size %> Debates:</div>
+		<% else %>
 		<div class="langu"><%= @user.debats.size %> debats by <%= @user.name %>:</div>
+		<% end %>
 		<div id="product">
 		  <%= render "debatsuser" %>
 		</div>

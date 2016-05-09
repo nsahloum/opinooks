@@ -8,9 +8,6 @@
         <div class="large-8 columns" id="menubox">
             <%= sort_link "cached_votes_total", "By Popularity" %>
             <%= sort_link "created_at", "By Date" %>
-            <% if user_signed_in? %>
-              <%= link_to 'My debats', current_user %>
-            <% end %>
         </div>
       </div>
       
